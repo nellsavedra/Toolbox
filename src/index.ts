@@ -21,8 +21,8 @@ export const isEmailValid = (email: string): boolean => {
     const address = email.split("@");
     if (address[0].length > 64) return false;
 
-    const tld = address[1].split(".");
-    if (tld.some((item) => item.length > 63)) return false;
+    const domain = address[1].split(".");
+    if (domain.some((item) => item.length > 63)) return false;
 
     return true;
 };
