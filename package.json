@@ -1,27 +1,27 @@
 {
-  "name": "@nellsavedra/toolbox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nellsavedra/toolbox.git"
-  },
-  "author": "Andrés Valle",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/nellsavedra/toolbox/issues"
-  },
-  "homepage": "https://github.com/nellsavedra/toolbox#readme",
-  "devDependencies": {
-    "typescript": "^5.0.4"
-  }
+    "name": "@nellsavedra/toolbox",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "npm run build"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nellsavedra/toolbox.git"
+    },
+    "author": "Andrés Valle",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/nellsavedra/toolbox/issues"
+    },
+    "homepage": "https://github.com/nellsavedra/toolbox#readme",
+    "devDependencies": {
+        "typescript": "^5.0.4"
+    }
 }
