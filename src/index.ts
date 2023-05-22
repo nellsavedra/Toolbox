@@ -18,11 +18,11 @@ export const isEmailValid = (email: string): boolean => {
     const valid = tester.test(email);
     if (!valid) return false;
 
-    const parts = email.split("@");
-    if (parts[0].length > 64) return false;
+    const address = email.split("@");
+    if (address[0].length > 64) return false;
 
-    const domainParts = parts[1].split(".");
-    if (domainParts.some((part) => part.length > 63)) return false;
+    const tld = address[1].split(".");
+    if (tld.some((item) => item.length > 63)) return false;
 
     return true;
 };
