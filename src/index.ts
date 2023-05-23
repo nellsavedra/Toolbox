@@ -1,6 +1,7 @@
 /**
  * @param {string} name - Name of the cookie
  * @returns {string} Value of the cookie
+ * @description Returns the value of the cookie
  */
 export const getCookie = (name: string): string => {
     return `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
@@ -9,6 +10,7 @@ export const getCookie = (name: string): string => {
 /**
  * @param {string} email - Email to validate
  * @returns {boolean} Is email valid or not
+ * @description Validates the email address
  */
 export const isEmailValid = (email: string): boolean => {
     if (!email) return false;
@@ -26,3 +28,14 @@ export const isEmailValid = (email: string): boolean => {
 
     return true;
 };
+
+/**
+ * @param {number} digits - Number of digits in the random number
+ * @returns {number} Random number
+ * @description Returns a random number with the specified number of digits
+ */
+export const getRandomInt = (digits: number): number => {
+    const min = Math.pow(10, digits - 1);
+    const max = Math.pow(10, digits) - 1;
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
