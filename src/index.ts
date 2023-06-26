@@ -38,4 +38,16 @@ export const getRandomInt = (digits: number): number => {
     const min = Math.pow(10, digits - 1);
     const max = Math.pow(10, digits) - 1;
     return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
+
+/**
+ * @returns {string} GUID v4
+ * @description Returns a GUID v4 made with Math.random (not cryptographically secure)
+ */
+export const createGuid = (): string => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+};
