@@ -42,7 +42,7 @@ export const getRandomInt = (digits: number): number => {
 
 /**
  * @returns {string} GUID v4
- * @description Returns a GUID v4 made with random numbers (not cryptographically secure)
+ * @description Returns a GUID v4 made with Math.random (not cryptographically secure)
  */
 export const createGuid = (): string => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
