@@ -51,3 +51,15 @@ export const createGuid = (): string => {
         return v.toString(16);
     });
 };
+
+/** 
+* @param {T} value - Value to check
+* @returns {boolean} Is the value empty or not
+* @description Checks if the value is empty
+*/
+export const isEmpty = <T>(value: T): boolean => {
+  if (value === undefined || value === null) return true;
+  if (typeof value === "string" && value.trim() === "") return true;
+  if (typeof value === "object" && Object.keys(value).length === 0) return true;
+  return Array.isArray(value) && value.length === 0;
+};
