@@ -1,27 +1,41 @@
 {
-    "name": "@nellsavedra/toolbox",
-    "version": "1.0.3",
-    "description": "",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "scripts": {
-        "build": "tsc",
-        "prepublishOnly": "npm run build"
-    },
-    "files": [
-        "dist"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/nellsavedra/toolbox.git"
-    },
-    "author": "Andrés Valle",
-    "license": "GPL-3.0-or-later",
-    "bugs": {
-        "url": "https://github.com/nellsavedra/toolbox/issues"
-    },
-    "homepage": "https://github.com/nellsavedra/toolbox#readme",
-    "devDependencies": {
-        "typescript": "^5.0.4"
-    }
+  "name": "@nellsavedra/toolbox",
+  "version": "1.0.4",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && echo '✅ Build successful'",
+    "prepublishOnly": "yarn run build",
+    "prepare": "husky"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nellsavedra/toolbox.git"
+  },
+  "author": "Andrés Valle",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nellsavedra/toolbox/issues"
+  },
+  "homepage": "https://github.com/nellsavedra/toolbox#readme",
+  "devDependencies": {
+    "@types/eslint": "^9",
+    "@types/node": "^22.1.0",
+    "eslint": "^9.8.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "typescript": "^5.0.4",
+    "typescript-eslint": "^8.0.1"
+  },
+  "lint-staged": {
+    "*.{ts,json}": [
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781"
 }
