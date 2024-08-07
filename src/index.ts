@@ -4,7 +4,7 @@
  * @description Returns the value of the cookie
  */
 export const getCookie = (name: string): string => {
-    return `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
+  return `; ${document.cookie}`.split(`; ${name}=`).pop().split(";").shift();
 };
 
 /**
@@ -13,20 +13,21 @@ export const getCookie = (name: string): string => {
  * @description Validates the email address
  */
 export const isEmailValid = (email: string): boolean => {
-    if (!email) return false;
-    if (email.length > 254) return false;
+  if (!email) return false;
+  if (email.length > 254) return false;
 
-    const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-    const valid = tester.test(email);
-    if (!valid) return false;
+  const tester =
+    /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+  const valid = tester.test(email);
+  if (!valid) return false;
 
-    const address = email.split("@");
-    if (address[0].length > 64) return false;
+  const address = email.split("@");
+  if (address[0].length > 64) return false;
 
-    const domain = address[1].split(".");
-    if (domain.some((item) => item.length > 63)) return false;
+  const domain = address[1].split(".");
+  if (domain.some((item) => item.length > 63)) return false;
 
-    return true;
+  return true;
 };
 
 /**
@@ -35,9 +36,9 @@ export const isEmailValid = (email: string): boolean => {
  * @description Returns a random number with the specified number of digits
  */
 export const getRandomInt = (digits: number): number => {
-    const min = Math.pow(10, digits - 1);
-    const max = Math.pow(10, digits) - 1;
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  const min = Math.pow(10, digits - 1);
+  const max = Math.pow(10, digits) - 1;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 /**
@@ -45,18 +46,18 @@ export const getRandomInt = (digits: number): number => {
  * @description Returns a GUID v4 made with Math.random (not cryptographically secure)
  */
 export const createGuid = (): string => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-        var r = Math.random() * 16 | 0,
-            v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0,
+      v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 };
 
-/** 
-* @param {T} value - Value to check
-* @returns {boolean} Is the value empty or not
-* @description Checks if the value is empty
-*/
+/**
+ * @param {T} value - Value to check
+ * @returns {boolean} Is the value empty or not
+ * @description Checks if the value is empty
+ */
 export const isEmpty = <T>(value: T): boolean => {
   if (value === undefined || value === null) return true;
   if (typeof value === "string" && value.trim() === "") return true;

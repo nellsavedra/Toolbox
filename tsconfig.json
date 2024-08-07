@@ -1,14 +1,17 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "removeComments": true,
-        "esModuleInterop": true,
-        "module": "ESNext",
-        "outDir": "./dist",
-        "sourceMap": false,
-        "target": "ES5"
-    },
-    "include": [
-        "src/**/*.ts"
-    ]
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "target": "ES6",
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    "dist/**/*"
+  ],
 }
